@@ -1,16 +1,27 @@
-import React, {Component, useState} from "react";
-import '../styles/App.css';
+import  React, { useState } from 'react';
 
-class App extends Component {
-    render() {
+const App=()=>{
+  const [ctime, setTime]=useState(0);
 
-        return(
-            <>
-               
-            </>
-        )
-    }
+  const updateTime=()=>{
+    
+        setTime(t);
+  }
+  var t=new Date().toLocaleTimeString();
+  
+  setInterval(updateTime,1000);
+ 
+  //document.getElementById("time").innerHTML=t;
+  
+  setInterval(updateTime,1000);
+    return (
+        <>
+        <div id="Clock">
+            <h3 id="time">{t}</h3>
+        </div>
+
+        </>
+    )
 }
-
 
 export default App;
